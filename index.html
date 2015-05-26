@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <title>Streaming Example!</title>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+   </head>
+   <body>
+      <h1>Hello, world!</h1>
+
+      <div id="player">
+         <button id="playButton">Play</button>
+      </div>
+
+      <script type="text/javascript">
+         $(function() {
+               $('#player').append('<audio>');
+               var player = $('#player audio')[0];
+               player.src = "/content";
+               player.load();
+
+               var isPlaying = false;
+               var playButton = $('#playButton');
+               playButton.on('click', function() {
+                  if (isPlaying) {
+                     player.pause();
+                     playButton.empty().append('Play');
+                     isPlaying = false;
+                  } else {
+                     player.play();
+                     playButton.empty().append('Pause');
+                     isPlaying = true;
+                  }
+               });
+         })
+      </script>
+   </body>
+</html>

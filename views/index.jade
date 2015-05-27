@@ -1,0 +1,9 @@
+extends layout
+
+block js
+  script(src='/js/app.js')
+
+block content
+  h1= "Hello, world!"
+  div(id='player')
+     button(id='playButton')= "Play"
